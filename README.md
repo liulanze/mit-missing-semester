@@ -20,3 +20,5 @@
 - `tee` package -> get an input and write it into a file, also print standard output. `echo 1060 | sudo tee brightness`
 - `find -type f -name '*brightness*'` (an example of find)
 - `xdg-open <file>` -> open a file with appropriate format. (for instance `.html` file to open a web browser)
+
+## Lecture 2
