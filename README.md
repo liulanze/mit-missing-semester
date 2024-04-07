@@ -21,4 +21,11 @@
 - `find -type f -name '*brightness*'` (an example of find)
 - `xdg-open <file>` -> open a file with appropriate format. (for instance `.html` file to open a web browser)
 
-## Lecture 2
+## Lecture 2 Shell Tools and Scripting..
+
+- `source xyz.sh` -> automatically add bin to source for shall to execute.
+- `/dev/null` -> discard message often used in output and any error messages.
+- `find . -name src -type d`
+- `find . -path "**/test/*.py' -type f`
+- `locate README.md` -> similiar to `find`.
+- ctrl + R and keep typing it for scrolling.
