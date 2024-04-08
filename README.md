@@ -29,3 +29,6 @@
 - `find . -path "**/test/*.py' -type f`
 - `locate README.md` -> similiar to `find`.
 - ctrl + R and keep typing it for scrolling.
+
+## Lecture 3
+
