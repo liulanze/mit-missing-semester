@@ -143,4 +143,34 @@ set mouse+=a
 " inoremap <Down>  <ESC>:echoe "Use j"<CR>
 ```
 
-## Lecture 4
+## Lecture 4 Data Wrangling
+
+- one code style suggestion: change `ssh <remote_server> journalctl | grep ssh | grep "Disconnected from" | less` => `ssh <remote_server> 'journalctl | grep ssh | grep "Disconnected from"' | less`
+
+  By this way, make all required ops only happens in the server, not the host.
+- `sed` -> modify content of course.
+- regular expression: `.` -> any characters. `*` -> 0 or any previous characters. `.*` -> any number of any characters.
+- `[ab]` -> a or b character. So, `s/[ab]//` (aba / bba) => (ba). `s/[ab]//g` => ().
+- `(ab)` -> ab string.
+- `s/(ab|bc)*//g` -> remove ab or bc.
+- one good example: `cat ssh.log | sed -E 's/^.*Disconnected from (invalid |authenticating )?user (.*) [0-9.]+ port [0-9]+ ( \[preauth\])?$/\2/'`
+
+  - `^` -> beginning of the text. `$` -> end of the text.
+  - `?` -> 0 or 1.
+  - `(..)` represent a group, you can see there are three groups in the example, note that the second group does not do any ops from sed, but for the replacement `\2`, it put the second group content string `(.*)` here.
+- material: regular expression 101 -> https://regex101.com/
+- `.*?Disconnected from ... ()` -> that `?` will make sure once it finds the first that pattern, it will treat the rest of content as group in this case.
+- `wc -l` count the lines of an output or a file.
+  - `wc` -> word count.
+  - `-l` -> lines.
+- `sort`
+- `uniq -c` -> unique count.
+- `awk` -> column based stream processor. `awk` has lots of functions and it is a programming language.
+  - `awk '$1 ==1 && $2 ~ /^c.*e$/ {print $0}` => print the columns that second column matches starts with c and end with e.
+- `bc` -> berkerly count. `bc -l` calculate probably two string plus, like "1+1" | bc -l => 2.
+- `xargs`: organize output and put them as arguments.
+  - example: `rustup toolchain list | grep nightly | grep -v 'nightly-x86' | grep 2019 | sed 's/-x86.*//' | xargs rustup toolchain uninstall` => `rustup toolchain uninstall <> <> <> ... <>
+- `ffmpeg` -> tool converting audio / video.
+- `tee` -> dump / write the output to file(s) in the meantime print the output.
+
+## Lecture 5
