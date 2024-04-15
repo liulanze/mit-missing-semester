@@ -211,4 +211,11 @@ set mouse+=a
 - `tmux` -> manage multiple terminal sessions within a single window, useful? Or
   make it more complex?
 
-## Lecture 6
+## Lecture 6 Version Control (git)
+
+- `git remote add <remote name> <remote repository URL>` -> `<remote name>`:
+  This is the shorthand name you assign to the remote repository. Common names
+  include `origin` for the primary or default remote, and `upstream` typically
+  used for the original repository when you have forked a project.
+
+## Lecture 7
