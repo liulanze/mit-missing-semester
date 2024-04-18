@@ -218,4 +218,29 @@ set mouse+=a
   include `origin` for the primary or default remote, and `upstream` typically
   used for the original repository when you have forked a project.
 
-## Lecture 7
+## Lecture 7 Debugging and Profiling
+
+- n/a on note.
+
+## Lecture 8 Metaprogramming (build system / Makefile / make / release version)
+
+- `%` stands for any string file name.
+- `$*` -> display the stem, base name of the file without the extension.
+- `$@` -> represent the target of the rule.
+- `$<` -> represent the first prerequisite of the rule.
+- `version` for break debugging purpose mainly. Remember major version, minor
+  version, and patch / release version.
+- A lock file in software development is NOT primarily for version control in
+  the traditional sense, like Git. Instead, it's used in dependency management
+  systems within various programming environments to control and manage the
+  exact versions of packages and dependencies used in a project. This ensures
+  consistency across different development environments and production, and
+  helps avoid "it works on my machine" issues. Freeze the ecosystem.
+- `Continuous Integration` (those bars under README Github project repo) -> like
+  when you push PR there will be a PR pipeline testing run. <- achieved by event
+  triggered actions.
+- `cmake` -> generate make file for c project. Usually if the make file is
+  large, sometimes they have a template build tool for all for general usage.
+- `maven` / `ant` help to build Java env / eco.
+
+## Lecture 9
