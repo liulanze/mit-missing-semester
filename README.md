@@ -309,4 +309,63 @@ set mouse+=a
   - ![why symmetric is fater than asymmetric](symmetric_faster_asymmetric.png)
   - ![why symmetric is fater than asymmetric](symmetric_faster_asymmetric_2.png)
 
-## Lecture 10
+## Lecture 10 potpourri
+
+- Concepts mentioned
+  - Keyboard remapping
+  - Daemon processes
+  - File system in user space
+  - Backups
+  - APIs
+  - Command line arguments
+  - Window managers (NOT Windows!)
+    - for example in Windows, `ctr + arrows`, do not have to use mouse to move.
+  - VPNs
+  - Markdowns
+  - Desktop automation (MacOS): similar to Window manager before, but for MacOS.
+  - Booting and live USBs
+  - Virtual machines, Cloud and docker
+  - Notebook programming environment
+  - Github
+
+## Lecture 11 Q & A
+
+- When do I use Python versus a Bash script?
+  - It depends, the whole business logic should be in programming language
+    mostly, script is for some certain needs, usually less than 100 lines of
+    code.
+- What is diff between `source ./certain_script.sh` and directly execute
+  `./certain_script.sh`?
+  - Directly Running a Script
+    - When you run a script directly, you typically do so by invoking it from
+      the shell as an executable or by calling it with an interpreter
+      explicitly. Here are the key aspects of this approach:
+    - New Process: The script runs in a new subshell (a separate process) that
+      is a child of the current shell. Any changes made to the environment (like
+      setting environment variables, changing directories, etc.) do not persist
+      when the script completes; they are local to the subshell.
+    - Permissions: The script file needs to have execute permissions in order to
+      be run directly. This is typically set with chmod +x script.sh.
+  - Sourcing a Script
+    - Sourcing a script means executing the script in the current shell
+      environment, not in a new subshell. Here’s what happens when you source a
+      script:
+    - Current Shell: The script is executed within the existing shell process;
+      no new process is created. As a result, any changes made to the
+      environment variables, current directory, or shell settings are retained
+      in the current shell session after the script completes.
+    - No Need for Execute Permissions: Since the script is read and executed in
+      the current shell, it does not need to be marked as executable. It only
+      needs to be readable.
+- `/bin` usually contains essential binaries. `/lib` contains libraries the bins
+  can link to. `/etc` contains configuration files. `/var` contains files change
+  with time, like logs. `/opt` contains 3rd party softwares.
+- When you use containers to isolate environment, you better make the underlying
+  OS to be roughly the same, cuz they share the lower level OS right. Like for
+  example if you have the Linux software in container trying to run on MacOS
+  host that might not work the best as expected.
+- 2FA, or Two-Factor Authentication, is a security process that requires two
+  different forms of identification from the user to grant access to an online
+  account or a system. This method significantly enhances security by adding an
+  extra layer of verification beyond just the username and password combination.
+  Like Ubi key.
